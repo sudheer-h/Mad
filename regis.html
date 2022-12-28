@@ -1,0 +1,88 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.*" %>    
+<%@ page import="java.text.*" %>    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome User</h1>
+    <% try{
+    	SimpleDateFormat sd = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
+    	Date date = new Date();
+    	sd.setTimeZone(TimeZone.getTimeZone("IST"));
+    	String name = (session.getAttribute("name")).toString();
+    	String roll = (session.getAttribute("rollno")).toString();
+    	String email = (session.getAttribute("email")).toString();
+    	String year = (session.getAttribute("year")).toString();
+    	String course = (session.getAttribute("course")).toString();
+    	String gender = (session.getAttribute("gender")).toString();
+    	 out.write("<!DOCTYPE html>\r\n");
+         out.write("<html lang=\"en\">\r\n");
+         out.write("<head>\r\n");
+         out.write("    <meta charset=\"UTF-8\">\r\n");
+         out.write("    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n");
+         out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
+         out.write("    <title>Document</title>\r\n");
+         out.write("</head>\r\n");
+         out.write("<body>\r\n");
+         out.write("    <table border=\"2px solid black\">\r\n");
+         out.write("        <tr>\r\n");
+         out.write("            <th colspan=\"6\">\r\n");
+         out.write("                YOUR DEATILS ARE\r\n");
+         out.write("            </th>\r\n");
+         out.write("        </tr>\r\n");
+         out.write("        <TR>\r\n");
+         out.write("            <TD>\r\n");
+         out.write("                NAME\r\n");
+         out.write("            </TD>\r\n");
+         out.write("            <TD>\r\n");
+         out.write("                ROLL NO\r\n");
+         out.write("            </TD>\r\n");
+         out.write("            <TD>\r\n");
+         out.write("                EMAIL\r\n");
+         out.write("            </TD>\r\n");
+         out.write("            <TD>\r\n");
+         out.write("                YEAR\r\n");
+         out.write("            </TD>\r\n");
+         out.write("            <TD>\r\n");
+         out.write("                COURSE\r\n");
+         out.write("            </TD>\r\n");
+         out.write("            <TD>\r\n");
+         out.write("                GENDER\r\n");
+         out.write("            </TD>\r\n");
+         out.write("            \r\n");
+         out.write("        </TR>\r\n");
+         out.write("        <TR>\r\n");
+         out.write("            <TD>\r\n");
+         out.write(                name+"\r\n");
+         out.write("            </TD>\r\n");
+         out.write("            <td>\r\n");
+         out.write(                roll+"\r\n");
+         out.write("            </td>\r\n");
+         out.write("            <td>\r\n");
+         out.write(                 email+"\r\n");
+         out.write("            </td>\r\n");
+         out.write("            <td>\r\n");
+         out.write(                year+"\r\n");
+         out.write("            </td>\r\n");
+         out.write("            <td>\r\n");
+         out.write(              course+"\r\n");
+         out.write("            </td>\r\n");
+         out.write("            <td>\r\n");
+         out.write(                gender+"\r\n");
+         out.write("            </td>\r\n");
+         out.write("            \r\n");
+         out.write("        </TR>\r\n");
+         out.write("    </table>\r\n");
+         out.write("</body>\r\n");
+         out.write("</html>");
+    	out.println("<br>"+"<br>");
+    	 sd.setTimeZone(TimeZone.getTimeZone("IST"));
+   	  out.println("<br>"+sd.format(date));
+    }catch(Exception e){}
+    %>
+</body>
+</html>
